@@ -1,10 +1,13 @@
 package santarelli.enrico.domain.models;
 
+import jakarta.annotation.Nullable;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Size;
+import org.hibernate.annotations.DynamicUpdate;
 import santarelli.enrico.domain.enums.Status;
 
 @Entity(name = "tb_task")
+@DynamicUpdate // only send attributes to update on updateTask
 public class Task {
 
     @Id
@@ -13,7 +16,6 @@ public class Task {
 
     private String title;
 
-    @Column(nullable = true, length = 100)
     private String description;
 
     private Integer iconCodePoint;
@@ -21,6 +23,7 @@ public class Task {
     @Size(max = 5, min = 1)
     private Integer difficulty;
 
+    @Enumerated(EnumType.STRING)
     private Status status;
 
     public Long getId() {

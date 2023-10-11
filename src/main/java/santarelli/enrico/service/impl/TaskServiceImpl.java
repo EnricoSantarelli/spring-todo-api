@@ -2,6 +2,7 @@ package santarelli.enrico.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import santarelli.enrico.domain.enums.Status;
 import santarelli.enrico.domain.models.Task;
 import santarelli.enrico.domain.repositories.TaskRepository;
 import santarelli.enrico.service.TaskService;
@@ -23,7 +24,7 @@ public class TaskServiceImpl implements TaskService {
 
     @Override
     public Task createTask(Task task) throws InvalidAttributesException{
-        if(task.getDifficulty() == null || task.getStatus() == null || task.getId() == null || task.getIconCodePoint() == null || task.getTitle() == null){
+        if(task.getDifficulty() == null || task.getStatus() == null || task.getIconCodePoint() == null || task.getTitle() == null){
             throw new InvalidAttributesException();
         }
         Task taskCreated = taskRepository.save(task);

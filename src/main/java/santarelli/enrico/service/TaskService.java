@@ -11,7 +11,6 @@ public interface TaskService {
     List<Task> getAllTasks();
     Task createTask(Task task) throws InvalidAttributesException;
     Task updateTask(Task task);
-
     void deleteTask(Long id) throws NoSuchElementException;
 
 }

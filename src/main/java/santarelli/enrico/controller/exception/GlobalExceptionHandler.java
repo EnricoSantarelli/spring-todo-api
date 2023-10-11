@@ -21,7 +21,7 @@ public class GlobalExceptionHandler {
 
     @ExceptionHandler(InvalidAttributesException.class)
     public ResponseEntity<String> handleInvalidAttributesException(InvalidAttributesException invalidAttributesException){
-        return new ResponseEntity<>("Invalid class attributes.", HttpStatus.BAD_REQUEST);
+        return new ResponseEntity<>("Invalid attributes.", HttpStatus.BAD_REQUEST);
     }
 
     @ExceptionHandler(Throwable.class)
