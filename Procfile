@@ -1,0 +1,1 @@
+web: java -jar target/to-do-api-restful-0.0.1-SNAPSHOT.jar
